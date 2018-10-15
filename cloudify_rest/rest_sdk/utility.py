@@ -59,7 +59,9 @@ def process(params, template, request_props):
             'call_with_request_props \n {}'.format(call_with_request_props))
         response = _send_request(call_with_request_props)
         _process_response(response, call, result_propeties)
-    result_propeties = {'result_propeties': result_propeties, 'calls': calls}
+    result_propeties = {'headers': response.headers,
+                        'result_propeties': result_propeties,
+                        'calls': calls}
     return result_propeties
 
 
@@ -109,8 +111,6 @@ def _send_request(call):
             if i == len(call['hosts']) - 1:
                 logger.error('No host from list available')
                 raise
-
-    logger.debug('BOTA Response \n headers:{}\n'.format(response.headers))
 
     logger.info(
         'Response \n content:{}\n status_code:{}\n'
