@@ -110,6 +110,8 @@ def _send_request(call):
                 logger.error('No host from list available')
                 raise
 
+    logger.debug('BOTA Response \n headers:{}\n'.format(response.headers))
+
     logger.info(
         'Response \n content:{}\n status_code:{}\n'
         .format(response.content, response.status_code)
