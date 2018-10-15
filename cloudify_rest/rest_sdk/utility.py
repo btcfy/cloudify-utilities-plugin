@@ -18,6 +18,7 @@ import logging
 import ast
 import re
 import xmltodict
+from cloudify import ctx
 from jinja2 import Template
 import requests
 from . import LOGGER_NAME
