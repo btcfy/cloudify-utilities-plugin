@@ -127,7 +127,7 @@ def _send_request(call):
 
 
 def _process_response(response, call, store_props):
-    logger.debug(
+    ctx.logger.debug(
         '_process_response \n response:{}\n call:{}\n store_props:{}'.format(
             response,
             call, store_props))
